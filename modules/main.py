@@ -31,7 +31,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def start(_,message):
-  await message.reply_photo(photo="https://i.ibb.co/pzH4gYT/image.jpg",caption=f"**👋!\n\n**➠ 𝐈 AM AN UPLOADER BOT 🐉 **\n**➠ I Can Extract Videos & Pdf Form Your Text File and Upload to Telegram**\n\n**➠ 𝐔𝐬𝐞 /dragon 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞  **\n\n🎚️Send /h2t Command to convert💾 HTML File into TXT 🗂️File**\n\n**➡️Now You Can Also Check Your plan 📇validity /myplan**\n\n\n** Meke Your 💾Txt File /dragon **\n\n**For Stop ⛔ working process ➡️ /stop Command**\n\n**➠𝐌𝐚𝐝𝐞 𝐁𝐲: 🐲 @ex_dragon**\n",
+  await message.reply_photo(photo="https://i.ibb.co/pzH4gYT/image.jpg",caption=f"**👋!\n\n**➠ 𝐈 AM AN UPLOADER BOT 🐉 **\n**➠ I Can Extract Videos & Pdf Form Your Text File and Upload to Telegram**\n\n**➠ 𝐔𝐬𝐞 /dragon 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞  **\n\n🎚️Send /h2t Command to convert💾 HTML File into TXT 🗂️File**\n\n**For Stop ⛔ working process ➡️ /stop Command**\n\n**➠𝐌𝐚𝐝𝐞 𝐁𝐲: 🐲 @ex_dragon**\n",
                             reply_markup=InlineKeyboardMarkup([
                            
                 [
@@ -65,51 +65,10 @@ async def run_bot(bot: Client, m: Message):
     await m.reply_document(document=txt_file,caption="Here is your txt file.")
     os.remove(txt_file)
 
-
-
-#def is_subscription_expired(user_id):
-#     with open("Subscription_data.txt", "r") as file:
-#         for line in file:
-#             data = line.strip().split(", ")
-#             if int(data[0]) == user_id:
-#                 end_date = datetime.datetime.strptime(data[2], "%d-%m-%Y") #%Y-%m-%d
-#                 today = datetime.datetime.today()
-#                 return end_date < today
-#     return True  # User not found in Subscription_data.txt or no subscription data found
-
-
-
-# # Define the myplan command handler
-# @bot.on_message(filters.command("myplan"))
-# async def myplan_command_handler(bot, message):
-#     user_id = message.from_user.id
-#     with open("Subscription_data.txt", "r") as file:
-#         for line in file:
-#             data = line.strip().split(", ")
-#             if int(data[0]) == user_id:
-#                 subscription_start = data[1]
-#                 expiration_date = data[2]
-#                 today = datetime.datetime.today()
-#                 if today > datetime.datetime.strptime(expiration_date, "%d-%m-%Y"):
-#                     plan = "EXPIRED "
-#                     response_text = f"**✨ User ID: {user_id}\n📊 PLAN STAT : {plan}\n\n🔰 Activated on : {subscription_start}\n🧨 Expiration Date: {expiration_date} \n\n 🫰🏼 ACTIVATE YOUR PLAN NOW ! \n⚡️ TO ACTIVATE MESSAGE : @ex_dragon :D **"
-#                 else:
-#                     plan = "ALIVE!"  
-#                     response_text = f"**✨ User ID: {user_id}\n📊 PLAN STAT : {plan}\n🔰 Activated on : {subscription_start}\n🧨 Expiration Date: {expiration_date}**"
-#                 await message.reply(response_text)
-#                 return
-#     if user_id in auth_users:
-#         await message.reply("YOU HAVE LIFE TIME ACCESS :) ")
-#     else:
-#         await message.reply("No subscription data found for you.")
-
-
 @bot.on_message(filters.command("stop"))
 async def restart_handler(_, m):
     await m.reply_text("**Restarted**✅", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
-
-
 
 @bot.on_message(filters.command(["dragon"]))
 async def account_login(bot: Client, m: Message):
