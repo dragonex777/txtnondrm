@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     ffmpeg \
     aria2 \
     && rm -rf /var/lib/apt/lists/
-    python3 -m pip install -U yt-dlp*
+    pip install -U yt-dlp*
 
     
 # This Dockerfile Created By Mr. Ankush Yadav.  Github.com/Mswpresents
