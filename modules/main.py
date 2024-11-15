@@ -227,9 +227,7 @@ async def account_login(bot: Client, m: Message):
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
 
-           
-
-             try:  
+           try:  
                 
                 cc = f'** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}.mp4\n\n**Batch »**  {b_name}\n\n**Downloaded By**  »  **{MR}**'
                 cc1 = f'** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}.pdf \n\n**Batch  »**  {b_name}\n\n**Downloaded By**  »  **{MR}**'
