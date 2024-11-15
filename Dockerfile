@@ -8,9 +8,7 @@ RUN apt-get update -y && \
     musl-dev \
     ffmpeg \
     aria2 \
-    && rm -rf /var/lib/apt/lists/
-    install -U yt-dlp*
-
+    && rm -rf /var/lib/apt/lists/*
     
 # This Dockerfile Created By Mr. Ankush Yadav.  Github.com/Mswpresents
 WORKDIR /app
